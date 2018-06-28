@@ -107,9 +107,12 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int uptime = 3340;
+
   while (1)
   {
-
+	  uptime++;
+	  max7219_print_number(&hspi1,uptime,1);
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -118,10 +121,6 @@ int main(void)
 	  HAL_GPIO_WritePin(LED_GPIO_Port,LED_Pin,RESET);
 	  HAL_Delay(500);
 
-	  HAL_GPIO_WritePin(LED_GPIO_Port,LED_Pin,SET);
-	  HAL_Delay(200);
-	  HAL_GPIO_WritePin(LED_GPIO_Port,LED_Pin,RESET);
-	  HAL_Delay(200);
   }
   /* USER CODE END 3 */
 
