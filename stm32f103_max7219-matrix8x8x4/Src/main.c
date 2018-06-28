@@ -44,6 +44,8 @@
 
 /* USER CODE BEGIN Includes */
 
+#include "max7219_digit.h"
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -96,6 +98,10 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+
+  max7219_init(&hspi1);
+  max7219_print_number(&hspi1,1122,0);
+  max7219_print_number(&hspi1,3344,1);
 
   /* USER CODE END 2 */
 
